@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="fabric-boilerplate.main" target="1.8" />
       <module name="fabric-boilerplate.test" target="1.8" />
+      <module name="fabric-console.main" target="1.8" />
+      <module name="fabric-console.test" target="1.8" />
       <module name="ld-config.main" target="1.8" />
       <module name="ld-config.test" target="1.8" />
     </bytecodeTargetLevel>

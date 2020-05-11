@@ -1,15 +1,15 @@
 {
 	"schemaVersion": 1,
-	"id": "fabric-boilerplate",
+	"id": "fabric-console",
 	"version": "${version}",
 
-	"name": "Fabric Boilerplate",
+	"name": "Fabric Console",
 	"description": "Congrats, you made it work!",
 	"authors": ["LoganDark"],
 	"contact": {
-		"sources": "https://github.com/LoganDark/fabric-boilerplate",
-		"website": "https://github.com/LoganDark/fabric-boilerplate",
-		"issues": "https://github.com/LoganDark/fabric-boilerplate/issues"
+		"sources": "https://github.com/LoganDark/fabric-console",
+		"website": "https://github.com/LoganDark/fabric-console",
+		"issues": "https://github.com/LoganDark/fabric-console/issues"
 	},
 
 	"custom": {
@@ -18,25 +18,12 @@
 	},
 
 	"license": "GPLv3",
-	"icon": "assets/fabric-boilerplate/icon.png",
+	"icon": "assets/fabric-console/icon.png",
 
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			{
-				"adapter": "kotlin",
-				"value": "net.logandark.boilerplate.FabricBoilerplate"
-			}
-		],
-		"modmenu": [
-			{
-				"adapter": "kotlin",
-				"value": "net.logandark.boilerplate.config.FabricBoilerplateModMenu"
-			}
-		]
-	},
+	"environment": "server",
+	"entrypoints": {},
 
-	"mixins": ["fabric-boilerplate.mixins.json"],
+	"mixins": ["fabric-console.mixins.json"],
 
 	"depends": {
 		"fabricloader": ">=0.7.1",
