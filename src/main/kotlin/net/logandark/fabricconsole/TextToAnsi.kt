@@ -73,7 +73,7 @@ object TextToAnsi {
 
 		message.visit(lastStyle) { text, style ->
 			builder.append(transition(lastStyle, style, true))
-			builder.append(text.string)
+			builder.append(text)
 
 			lastStyle = style
 		}

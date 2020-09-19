@@ -1,15 +1,22 @@
 package net.logandark.fabricconsole
 
+import net.minecraft.text.StringVisitable
 import net.minecraft.text.Style
 import net.minecraft.text.Text
+import java.util.Optional
 
-fun <R> Text.visit(parentStyle: Style, block: (Text, Style) -> R?): R? {
+fun Text.visit(parentStyle: Style, block: (String, Style) -> Unit) {
 	val style = style.withParent(parentStyle)
 
-	block(this, style)?.let { return it }
+	val sb = StringBuilder()
+	this.visitSelf(StringVisitable.Visitor<Unit> {
+		sb.append(it)
+		Optional.empty()
+	})
 
-	for (sibling in siblings)
-		sibling.visit(style, block)?.let { return it }
+	block(sb.toString(), style)
 
-	return null
+	siblings.forEach { sibling ->
+		sibling.visit(style, block)
+	}
 }
