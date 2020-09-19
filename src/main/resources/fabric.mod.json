@@ -4,7 +4,7 @@
 	"version": "${version}",
 
 	"name": "Fabric Console",
-	"description": "Congrats, you made it work!",
+	"description": "Adds colors to dedicated server console",
 	"authors": ["LoganDark"],
 	"contact": {
 		"sources": "https://github.com/LoganDark/fabric-console",
