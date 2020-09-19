@@ -1,62 +1,85 @@
 package net.logandark.fabricconsole
 
+import net.minecraft.text.Style
 import net.minecraft.text.Text
-import net.minecraft.util.Formatting
-import java.util.*
-import java.util.regex.Pattern
 
 object TextToAnsi {
-	object FormattingToAnsi {
-		private const val ESC = "\u001b"
-		private val CODES = mapOf(
-			Formatting.BLACK to "30",
-			Formatting.DARK_BLUE to "34",
-			Formatting.DARK_GREEN to "32",
-			Formatting.DARK_AQUA to "36",
-			Formatting.DARK_RED to "31",
-			Formatting.DARK_PURPLE to "35",
-			Formatting.GOLD to "33",
-			Formatting.GRAY to "37",
-			Formatting.DARK_GRAY to "90",
-			Formatting.BLUE to "94",
-			Formatting.GREEN to "92",
-			Formatting.AQUA to "96",
-			Formatting.RED to "91",
-			Formatting.LIGHT_PURPLE to "95",
-			Formatting.YELLOW to "93",
-			Formatting.WHITE to "97",
-			Formatting.OBFUSCATED to "",
-			Formatting.BOLD to "1",
-			Formatting.STRIKETHROUGH to "9",
-			Formatting.UNDERLINE to "4",
-			Formatting.ITALIC to "3",
-			Formatting.RESET to "0"
-		)
+	private fun combine(vararg codes: Int) =
+		if (codes.isEmpty()) "" else "\u001B[${codes.joinToString(";")}m"
 
-		private fun combine(vararg strings: String) =
-			"$ESC[${strings.filterNot(String::isEmpty).joinToString(";")}m"
+	private fun colorTransition(from: Int, to: Int, trueColor: Boolean): String {
+		if (from == to)
+			return ""
 
-		private fun forCode(code: Formatting) = CODES[code] ?: ""
+		val r = to shr 16 and 0xff
+		val g = to shr 8 and 0xff
+		val b = to and 0xff
 
-		fun toAnsi(code: Formatting) =
-			if (code.isColor) {
-				combine(forCode(Formatting.RESET), forCode(code))
-			} else {
-				combine(forCode(code))
-			}
+		return if (trueColor) {
+			combine(38, 2, r, g, b)
+		} else {
+			"" // TODO
+		}
 	}
 
-	private val formattingCodePattern: Pattern = Pattern.compile("§[0-9a-fk-or]", Pattern.CASE_INSENSITIVE)
+	private fun transition(from: Style, to: Style, trueColor: Boolean): String {
+		val escapes = mutableListOf<Int>()
 
-	private fun formattingFromChar(char: Char): Formatting? {
-		val normalized = char.toString().toLowerCase(Locale.ROOT)[0]
-		return Formatting.values().find { it.toString()[1] == normalized }
+		// First strip styles away
+
+		if (from.isBold && !to.isBold)
+			escapes.add(22) // Normal intensity
+
+		if (from.isStrikethrough && !to.isStrikethrough)
+			escapes.add(29) // Not crossed out
+
+		if (from.isUnderlined && !to.isUnderlined)
+			escapes.add(24) // Underline off
+
+		if (from.isItalic && !to.isItalic)
+			escapes.add(23) // Not italic, not Fraktur
+
+		val pre = combine(*escapes.toIntArray())
+		escapes.clear()
+
+		// Then change the color
+
+		val fromColor = from.color?.rgb ?: 0xffffff
+		val toColor = to.color?.rgb ?: 0xffffff
+
+		val transition = colorTransition(fromColor, toColor, trueColor)
+
+		// Then add new styles
+
+		if (!from.isBold && to.isBold)
+			escapes.add(1) // Bold or increased intensity
+
+		if (!from.isStrikethrough && to.isStrikethrough)
+			escapes.add(9) // Crossed-out
+
+		if (!from.isUnderlined && to.isUnderlined)
+			escapes.add(4) // Underline
+
+		if (!from.isItalic && to.isItalic)
+			escapes.add(3) // Italic
+
+		return pre + transition + combine(*escapes.toIntArray())
 	}
 
 	fun textToAnsi(message: Text): String {
-		return message.asFormattedString()
-			.replace(formattingCodePattern.toRegex()) {
-				FormattingToAnsi.toAnsi(formattingFromChar(it.value[1])!!)
-			} + FormattingToAnsi.toAnsi(Formatting.RESET)
+		val builder = StringBuilder()
+
+		var lastStyle = Style.EMPTY
+
+		message.visit(lastStyle) { text, style ->
+			builder.append(transition(lastStyle, style, true))
+			builder.append(text.string)
+
+			lastStyle = style
+		}
+
+		builder.append(transition(lastStyle, Style.EMPTY, true)) // reset
+
+		return builder.toString()
 	}
 }

@@ -29,7 +29,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
 	// ModMenu
-	modImplementation "io.github.prospector:modmenu:1.10.1+build.30"
+	modImplementation "io.github.prospector:modmenu:1.14.6+build.31"
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
