@@ -2,7 +2,11 @@
 	"required": true,
 	"package": "net.logandark.fabricconsole.mixin",
 	"compatibilityLevel": "JAVA_8",
-	"mixins": ["MixinMinecraftDedicatedServer", "MixinTextColor"],
+	"mixins": [
+		"MixinMinecraftDedicatedServer",
+		"MixinTextColor",
+		"MixinTranslatableText"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}
