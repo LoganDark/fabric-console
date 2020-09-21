@@ -1,5 +1,6 @@
 package net.logandark.fabricconsole
 
+import net.logandark.fabricconsole.mixin.MixinTextColor
 import net.minecraft.text.Style
 import net.minecraft.text.Text
 
@@ -44,8 +45,8 @@ object TextToAnsi {
 
 		// Then change the color
 
-		val fromColor = from.color?.rgb ?: 0xffffff
-		val toColor = to.color?.rgb ?: 0xffffff
+		val fromColor = (from.color as? MixinTextColor)?.rgb ?: 0xffffff
+		val toColor = (to.color as? MixinTextColor)?.rgb ?: 0xffffff
 
 		val transition = colorTransition(fromColor, toColor, trueColor)
 
