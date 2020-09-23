@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
 		"MixinMinecraftDedicatedServer",
+		"MixinMinecraftServer",
 		"MixinTextColor",
 		"MixinTranslatableText"
 	],
