@@ -17,11 +17,20 @@ import java.util.UUID;
 
 @Mixin(value = MinecraftServer.class)
 public class MixinMinecraftServer {
+	@Shadow
+	@Final
+	private static Logger LOGGER;
 
-	@Shadow @Final private static Logger LOGGER;
-
-	@Inject(method = "sendSystemMessage", at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;info(Ljava/lang/String;)V", remap = false), cancellable = true)
-	private void colorConsole(Text message, UUID senderUuid, CallbackInfo ci) {
+	@Inject(
+		method = "sendSystemMessage",
+		at = @At(
+			value = "INVOKE",
+			target = "Lorg/apache/logging/log4j/Logger;info(Ljava/lang/String;)V",
+			remap = false
+		),
+		cancellable = true
+	)
+	private void fabric_console_onSystemMessage(Text message, UUID senderUuid, CallbackInfo ci) {
 		if (FabricLoader.getInstance().getEnvironmentType() == EnvType.SERVER) {
 			LOGGER.info(TextToAnsi.INSTANCE.textToAnsi(message));
 			ci.cancel();
