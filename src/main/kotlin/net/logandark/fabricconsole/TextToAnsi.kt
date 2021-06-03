@@ -8,9 +8,12 @@ object TextToAnsi {
 	private fun combine(vararg codes: Int) =
 		if (codes.isEmpty()) "" else "\u001B[${codes.joinToString(";")}m"
 
-	private fun colorTransition(from: Int, to: Int, trueColor: Boolean): String {
+	private fun colorTransition(from: Int?, to: Int?, trueColor: Boolean): String {
 		if (from == to)
 			return ""
+
+		if (to == null)
+			return combine(39) // default foreground color
 
 		val r = to shr 16 and 0xff
 		val g = to shr 8 and 0xff
@@ -45,8 +48,8 @@ object TextToAnsi {
 
 		// Then change the color
 
-		val fromColor = (from.color as? MixinTextColor)?.rgb ?: 0xffffff
-		val toColor = (to.color as? MixinTextColor)?.rgb ?: 0xffffff
+		val fromColor = (from.color as? MixinTextColor)?.rgb
+		val toColor = (to.color as? MixinTextColor)?.rgb
 
 		val transition = colorTransition(fromColor, toColor, trueColor)
 
