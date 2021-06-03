@@ -30,9 +30,6 @@ import java.util.UUID;
 
 @Mixin(MinecraftDedicatedServer.class)
 public abstract class MixinMinecraftDedicatedServer extends MinecraftServer {
-	@Shadow
-	@Final
-	private static Logger LOGGER;
 
 	public MixinMinecraftDedicatedServer(Thread thread, DynamicRegistryManager.Impl impl, LevelStorage.Session session, SaveProperties saveProperties, ResourcePackManager resourcePackManager, Proxy proxy, DataFixer dataFixer, ServerResourceManager serverResourceManager, MinecraftSessionService minecraftSessionService, GameProfileRepository gameProfileRepository, UserCache userCache, WorldGenerationProgressListenerFactory worldGenerationProgressListenerFactory) {
 		super(thread, impl, session, saveProperties, resourcePackManager, proxy, dataFixer, serverResourceManager, minecraftSessionService, gameProfileRepository, userCache, worldGenerationProgressListenerFactory);
@@ -52,10 +49,5 @@ public abstract class MixinMinecraftDedicatedServer extends MinecraftServer {
 				})
 			)
 		);
-	}
-
-	@Override
-	public void sendSystemMessage(Text message, UUID senderUuid) {
-		LOGGER.info(TextToAnsi.INSTANCE.textToAnsi(message));
 	}
 }
