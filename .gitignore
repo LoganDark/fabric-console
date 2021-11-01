@@ -1,8 +1,9 @@
 # gradle
-
-/.gradle/
-/build/
-/out/
+.idea/
+*.iml
+.gradle/
+build/
+out/
 
 # fabric
 
