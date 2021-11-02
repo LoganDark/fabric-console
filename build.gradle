@@ -4,9 +4,10 @@ plugins {
 	id "org.jetbrains.kotlin.jvm"
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = sourceCompatibility
-compileKotlin.kotlinOptions.jvmTarget = sourceCompatibility.toString()
+// Unknown JVM target version: 17
+compileKotlin.kotlinOptions.jvmTarget = "16"//sourceCompatibility.toString()
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -27,7 +28,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
 	// ModMenu
-	modImplementation "com.terraformersmc:modmenu:1.16.22"
+	modImplementation "com.terraformersmc:modmenu:2.0.14"
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
@@ -83,5 +84,3 @@ publishing {
 		// mavenLocal()
 	}
 }
-
-compileKotlin.kotlinOptions.jvmTarget = "1.8"

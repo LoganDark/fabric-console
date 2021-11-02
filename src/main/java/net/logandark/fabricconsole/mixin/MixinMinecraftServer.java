@@ -40,7 +40,7 @@ public class MixinMinecraftServer {
 			.requires(src -> src.hasPermissionLevel(2))
 			.then(CommandManager.argument("message", TextArgumentType.text())
 				.executes(ctx -> {
-					ctx.getSource().getMinecraftServer().sendSystemMessage(TextArgumentType.getTextArgument(ctx, "message"), UUID.randomUUID());
+					ctx.getSource().getServer().sendSystemMessage(TextArgumentType.getTextArgument(ctx, "message"), UUID.randomUUID());
 					return 1;
 				})
 			)

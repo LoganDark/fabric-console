@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.fabricmc:tiny-remapper:0.6.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.6.0/f933e87da52f2e36f73ddfe5401f1029937d4118/tiny-remapper-0.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.fabricmc/tiny-remapper/0.6.0/267f5c942977f83922632d533355290148ac2198/tiny-remapper-0.6.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
