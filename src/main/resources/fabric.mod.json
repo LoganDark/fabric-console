@@ -20,7 +20,7 @@
 	"license": "GPLv3",
 	"icon": "assets/fabric-console/icon.png",
 
-	"environment": "server",
+	"environment": "*",
 	"entrypoints": {},
 
 	"mixins": ["fabric-console.mixins.json"],
