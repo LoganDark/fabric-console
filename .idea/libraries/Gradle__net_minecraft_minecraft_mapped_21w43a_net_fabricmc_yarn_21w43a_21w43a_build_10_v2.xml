@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.minecraft:minecraft-mapped:21w43a/net.fabricmc.yarn.21w43a.21w43a+build.10-v2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/fabric-loom/21w43a/net.fabricmc.yarn.21w43a.21w43a+build.10-v2/minecraft-mapped.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/fabric-loom/21w43a/net.fabricmc.yarn.21w43a.21w43a+build.10-v2/minecraft-mapped-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

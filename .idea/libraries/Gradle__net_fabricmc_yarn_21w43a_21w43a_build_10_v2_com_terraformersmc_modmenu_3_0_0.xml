@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net_fabricmc_yarn_21w43a_21w43a_build_10_v2.com.terraformersmc:modmenu:3.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_21w43a_21w43a_build_10_v2/com/terraformersmc/modmenu/3.0.0/modmenu-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_21w43a_21w43a_build_10_v2/com/terraformersmc/modmenu/3.0.0/modmenu-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
