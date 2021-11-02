@@ -26,9 +26,9 @@
 	"mixins": ["fabric-console.mixins.json"],
 
 	"depends": {
-		"fabricloader": ">=0.7.1",
-		"fabric-language-kotlin": ">=1.3.71+build.1",
-		"minecraft": "1.16.x"
+		"fabricloader": ">=${fabric_loader_version}",
+		"fabric-language-kotlin": ">=${fabric_language_kotlin_version}",
+		"minecraft": "${mc_version}"
 	},
 	"suggests": {}
 }
