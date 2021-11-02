@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom'  version '0.7-SNAPSHOT' //Last loom version that does not require java 16
+	id 'fabric-loom'
 	id 'maven-publish'
 	id "org.jetbrains.kotlin.jvm"
 }
