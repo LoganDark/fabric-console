@@ -3,6 +3,7 @@
 	"package": "net.logandark.fabricconsole.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": ["MixinMinecraftServer"],
+	"client": ["MixinChatHud"],
 	"injectors": {
 		"defaultRequire": 1
 	}
