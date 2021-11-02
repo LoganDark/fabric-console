@@ -14,7 +14,8 @@ group = project.maven_group
 minecraft {}
 
 repositories {
-	maven { url = "http://maven.fabricmc.net/" }
+	maven { url = "https://maven.fabricmc.net/" }
+	maven { url = "https://maven.terraformersmc.com/releases/" }
 }
 
 dependencies {
@@ -29,7 +30,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
 	// ModMenu
-	modImplementation "io.github.prospector:modmenu:1.10.1+build.30"
+	modImplementation "com.terraformersmc:modmenu:1.10.5"
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
