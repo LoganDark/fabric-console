@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net_fabricmc_yarn_1_15_2_1_15_2_build_15_v2.net.fabricmc.fabric-api:fabric-particles-v1:0.1.2+ad2f81bd0c">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_15_2_1_15_2_build_15_v2/net/fabricmc/fabric-api/fabric-particles-v1/0.1.2+ad2f81bd0c/fabric-particles-v1-0.1.2+ad2f81bd0c.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_15_2_1_15_2_build_15_v2/net/fabricmc/fabric-api/fabric-particles-v1/0.1.2+ad2f81bd0c/fabric-particles-v1-0.1.2+ad2f81bd0c-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
