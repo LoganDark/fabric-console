@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: net.fabricmc:access-widener:1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/1.0.0/22264da061b12132ecfe15f68e0a90a11b14e6f9/access-widener-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/1.0.0/12c6fa1688fdd090b39e28bb28f0c99c68802887/access-widener-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.fabricmc/access-widener/1.0.0/67214f6fae7f8c54af0d7bb40b9977a1a5a5580e/access-widener-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

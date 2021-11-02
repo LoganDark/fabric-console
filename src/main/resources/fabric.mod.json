@@ -14,7 +14,7 @@
 
 	"custom": {
 		"modmenu:api": false,
-		"modmenu:clientsideOnly": false
+		"modmenu:clientsideOnly": true
 	},
 
 	"license": "GPLv3",
