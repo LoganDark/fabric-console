@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net_fabricmc_yarn_1_16_3_1_16_3_build_11_v2.net.fabricmc:fabric-loader:0.9.3+build.207">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_16_3_1_16_3_build_11_v2/net/fabricmc/fabric-loader/0.9.3+build.207/fabric-loader-0.9.3+build.207.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_16_3_1_16_3_build_11_v2/net/fabricmc/fabric-loader/0.9.3+build.207/fabric-loader-0.9.3+build.207-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
