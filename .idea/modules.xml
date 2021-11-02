@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric-console.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric-console.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric-console.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric-console.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric-console.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric-console.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.logandark.fabric-console.main.iml" filepath="$PROJECT_DIR$/.idea/modules/net.logandark.fabric-console.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/net.logandark.fabric-console.test.iml" filepath="$PROJECT_DIR$/.idea/modules/net.logandark.fabric-console.test.iml" />
     </modules>
   </component>
 </project>
