@@ -7,7 +7,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = sourceCompatibility
 // Unknown JVM target version: 17
-compileKotlin.kotlinOptions.jvmTarget = "16"//sourceCompatibility.toString()
+compileKotlin.kotlinOptions.jvmTarget = sourceCompatibility.toString()
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
